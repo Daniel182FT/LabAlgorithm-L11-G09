@@ -31,6 +31,8 @@ from DISClib.Algorithms.Graphs import scc
 from DISClib.Algorithms.Graphs import dijsktra as djk
 # TODO Lab 11, agregar importaciones dfs y bfs
 from DISClib.Utils import error as error
+from DISClib.Algorithms.Graphs import bfs
+from DISClib.Algorithms.Graphs import dfs
 assert config
 
 """
@@ -59,6 +61,7 @@ def newAnalyzer():
             'connections': None,
             'components': None,
             'paths': None,
+            "search":None
         }
 
         analyzer['stops'] = m.newMap(numelements=14000,
@@ -217,10 +220,10 @@ def searchPaths(analyzer, initialStation, method):
     """
     # TODO Lab 11, ejectutar DepthFirstSearch de dfs
     if method == "dfs":
-        pass
+        analyzer["search"]=dfs.DepthFirstSearch(analyzer['connections'],initialStation)
     # TODO Lab 11, ejectutar BreadhtFisrtSearch de bfs
     elif method == "bfs":
-        pass
+        analyzer["search"]=bfs.BreadhtFisrtSearch(analyzer['connections'],initialStation)
     return analyzer
 
 

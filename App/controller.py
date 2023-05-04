@@ -134,7 +134,8 @@ def searchPaths(analyzer, initialStation, searchMethod):
     todas las otras estaciones del sistemas
     """
     # TODO Lab 11, conectar con la funcion del model searchPaths
-    return None
+
+    return model.searchPaths(analyzer,initialStation,searchMethod)
 
 
 def hasSearchPath(analyzer, destStation, searchMethod):
